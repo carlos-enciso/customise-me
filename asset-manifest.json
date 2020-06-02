@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/customise-me/static/css/main.c9a2b9d9.chunk.css",
+    "main.js": "/customise-me/static/js/main.aa6c1191.chunk.js",
+    "main.js.map": "/customise-me/static/js/main.aa6c1191.chunk.js.map",
+    "runtime-main.js": "/customise-me/static/js/runtime-main.1ae2f4b2.js",
+    "runtime-main.js.map": "/customise-me/static/js/runtime-main.1ae2f4b2.js.map",
+    "static/js/2.e6544fb7.chunk.js": "/customise-me/static/js/2.e6544fb7.chunk.js",
+    "static/js/2.e6544fb7.chunk.js.map": "/customise-me/static/js/2.e6544fb7.chunk.js.map",
+    "index.html": "/customise-me/index.html",
+    "precache-manifest.3b8e6fe7207919bf70b32c4af817821a.js": "/customise-me/precache-manifest.3b8e6fe7207919bf70b32c4af817821a.js",
+    "service-worker.js": "/customise-me/service-worker.js",
+    "static/css/main.c9a2b9d9.chunk.css.map": "/customise-me/static/css/main.c9a2b9d9.chunk.css.map",
+    "static/js/2.e6544fb7.chunk.js.LICENSE.txt": "/customise-me/static/js/2.e6544fb7.chunk.js.LICENSE.txt",
+    "static/media/background1.jpg": "/customise-me/static/media/background1.63eb2e00.jpg",
+    "static/media/banner.css": "/customise-me/static/media/crossing.092c5e09.png",
+    "static/media/customizeme_final_color.png": "/customise-me/static/media/customizeme_final_color.5e5a649d.png",
+    "static/media/parallaxBackground.css": "/customise-me/static/media/unnamed.86137221.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1ae2f4b2.js",
+    "static/js/2.e6544fb7.chunk.js",
+    "static/css/main.c9a2b9d9.chunk.css",
+    "static/js/main.aa6c1191.chunk.js"
+  ]
+}
