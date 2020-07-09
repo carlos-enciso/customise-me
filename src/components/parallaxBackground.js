@@ -5,21 +5,21 @@ import styled from 'styled-components';
 import './parallaxBackground.css';
 
 const Container = styled.div`
-  width: 100%;
-  height: ${(props) => props.height}px;
+	width: 100%;
+	height: ${(props) => props.height}vh;
 `;
 
-function ParallaxBackground(props) {
-  const { contentHeight } = props;
-  return (
-    <Parallax strength={500} bgStyle={{ top: '35%', width: '100%' }}>
-      <Background className="custom-bg" />
-      <Container height={contentHeight} />
-    </Parallax>
-  );
-}
+const ParallaxBackground = (props) => {
+	const { contentHeight } = props;
+	return (
+		<Parallax strength={500} bgStyle={{ top: '35%', width: '100%' }}>
+			<Background className="custom-bg" />
+			<Container height={contentHeight} />
+		</Parallax>
+	);
+};
 ParallaxBackground.propTypes = {
-  contentHeight: PropTypes.string.isRequired,
+	contentHeight: PropTypes.string.isRequired,
 };
 
 export default ParallaxBackground;
