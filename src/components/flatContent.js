@@ -9,16 +9,15 @@ const Container = styled.div`
 `;
 
 const FlatContent = React.forwardRef((props, ref) => {
-	const { height, onWheel } = props;
+	const { height } = props;
 	return (
-		<Container ref={ref} onWheel={onWheel} height={height}>
+		<Container ref={ref} height={height} >
 			I&apos;m in the flat content
 		</Container>
 	);
 });
 FlatContent.propTypes = {
-	height: PropTypes.string.isRequired,
-	onWheel: PropTypes.func.isRequired,
+	height: PropTypes.string.isRequired
 };
 
 export default FlatContent;

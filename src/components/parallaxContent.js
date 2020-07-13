@@ -9,9 +9,9 @@ const Container = styled.div`
 `;
 
 const ParallaxContent = React.forwardRef((props, ref) => {
-	const { contentHeight, backgroundLogo, onWheel } = props;
+	const { contentHeight, backgroundLogo } = props;
 	return (
-		<Container height={contentHeight} ref={ref} onWheel={onWheel}>
+		<Container height={contentHeight} ref={ref} >
 			<Parallax
 				bgImage={backgroundLogo}
 				bgImageAlt="background"
@@ -24,8 +24,7 @@ const ParallaxContent = React.forwardRef((props, ref) => {
 });
 ParallaxContent.propTypes = {
 	contentHeight: PropTypes.string.isRequired,
-	backgroundLogo: PropTypes.string.isRequired,
-	onWheel: PropTypes.func.isRequired,
+	backgroundLogo: PropTypes.string.isRequired
 };
 
 export default ParallaxContent;

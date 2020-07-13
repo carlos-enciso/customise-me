@@ -1,12 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ReactFullpage from '@fullpage/react-fullpage';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-	<React.StrictMode>
-		<App />
-	</React.StrictMode>,
+	<ReactFullpage
+		licenseKey={'<API-KEY>'}
+		scrollingSpeed={700}
+		scrollOverflow={true}
+		render={() => {
+			return (
+				<App />
+			);
+		}}
+	/>,
 	document.getElementById('root'),
 );
 

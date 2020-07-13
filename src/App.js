@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import GlobalBodyStyle from './styles/globalStyles';
 import { Banner, FlatContent, ParallaxBackground, ParallaxContent } from './components';
 
@@ -17,63 +16,17 @@ const Wrapper = styled.div`
 `;
 
 function App() {
-	const [isScrollable, setIsScrollable] = useState(false);
-
-	useEffect(() => {
-		if (isScrollable) {
-			enableBodyScroll(wrapper);
-		} else {
-			disableBodyScroll(wrapper);
-		}
-	}, [isScrollable]);
-
-	function scrollFromBanner(event) {
-		console.log('scrollToNext');
-		if (event.deltaY > 0) {
-			flatContent.current.scrollIntoView({
-				behavior: 'smooth',
-				block: 'end',
-				inline: 'nearest',
-			});
-		}
-	}
-	function scrollFromUs(event) {
-		console.log('scrollToPrev');
-		if (event.deltaY < 0) {
-			setIsScrollable(false);
-			bannerContent.current.scrollIntoView({
-				behavior: 'smooth',
-				block: 'start',
-				inline: 'nearest',
-			});
-		} else {
-			setIsScrollable(true);
-			parallaxContent.current.scrollIntoView({
-				behavior: 'smooth',
-				block: 'start',
-				inline: 'nearest',
-			});
-		}
-	}
-
-	function scrollFromParallax(event) {
-		console.log('scrollToPrev');
-		if (event.deltaY < 0) {
-			flatContent.current.scrollIntoView({
-				behavior: 'smooth',
-				block: 'start',
-				inline: 'nearest',
-			});
-		}
-	}
-
 	return (
 		<div>
 			<GlobalBodyStyle />
 			<Wrapper ref={wrapper}>
-				<Banner ref={bannerContent} onWheel={scrollFromBanner} />
-				<FlatContent ref={flatContent} onWheel={scrollFromUs} height="100" />
-				<div ref={parallaxContent} onWheel={scrollFromParallax}>
+				<div className="section">
+					<Banner ref={bannerContent} />
+				</div>
+				<div className="section">
+					<FlatContent ref={flatContent} height="100" />
+				</div>
+				<div ref={parallaxContent} className="section">
 					<ParallaxContent contentHeight="100" backgroundLogo={backgroundLogo} />
 					<ParallaxBackground contentHeight="100" />
 				</div>

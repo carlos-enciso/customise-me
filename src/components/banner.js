@@ -1,63 +1,73 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Parallax, Background } from 'react-parallax';
 import './banner.css';
 
-const customiseMeLogo = require('../assets/customizeme_final_color.png');
+const customiseMeLogo = require('../assets/logo-white.png');
+const customiseMeSlogan = require('../assets/slogan.png');
+const customiseMeJourney = require('../assets/journey.png');
 
 const Wrapper = styled.div`
 	height: 100vh;
 	width: 100vw;
 	-ms-overflow-style: none;
+	background: rgb(0,94,251);
+	background: linear-gradient(90deg, rgba(0,94,251,1) 25%, rgba(34,0,234,1) 100%);
 `;
-
+const Container = styled.div`
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-content: center;
+	padding-top: 1em;
+	padding-left: 4em;
+	padding-right: 4em;
+`;
+const LogoContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	justify-content: center;
+`;
+const JourneyContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	justify-content: center;
+	padding-top: 1em;
+`;
 const Logo = styled.img`
-	height: 300px;
-	width: 300px;
+	width: 35%;
 	background: transparent;
-	padding: 20px;
-	position: absolute;
-	top: 65%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	z-index: 1000;
 `;
 
-const Banner = React.forwardRef((props, ref) => {
-	const { onWheel } = props;
+const Slogan = styled.img`
+	width: 43%;
+	background: transparent;
+	align-self: flex-end;
+	margin-left: 5em;
+	margin-bottom: 2em;
+`;
+
+const Journey = styled.img`
+	width: 78%;
+	background: transparent;
+    height:auto;
+`;
+
+const Banner = React.forwardRef(() => {
 	return (
-		<Wrapper ref={ref} onWheel={onWheel}>
-			<Parallax
-				strength={100}
-				style={{ height: '100vh', width: '100vw' }}
-				bgStyle={{ height: '104%', width: '100vw' }}
-				renderLayer={(percentage) => (
-					<div
-						style={{
-							position: 'absolute',
-							background: `white`,
-							left: '50%',
-							top: '65%',
-							borderRadius: '50%',
-							transform: 'translate(-50%,-50%)',
-							width: 400 - percentage * 50,
-							height: 400 - percentage * 50,
-							zIndex: 99,
-						}}
-					/>
-				)}
-			>
-				<Background className="banner-bg" />
-				<div style={{ height: '100vh' }}>
+		<Wrapper>
+			<Container>
+				<LogoContainer>
 					<Logo src={customiseMeLogo} />
-				</div>
-			</Parallax>
+					<Slogan src={customiseMeSlogan} />
+				</LogoContainer>
+				<JourneyContainer>
+					<Journey src={customiseMeJourney} />
+				</JourneyContainer>
+			</Container>
 		</Wrapper>
 	);
 });
-Banner.propTypes = {
-	onWheel: PropTypes.func.isRequired,
-};
 
 export default Banner;
