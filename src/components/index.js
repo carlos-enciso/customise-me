@@ -1,6 +1,7 @@
 import Banner from './banner';
 import FlatContent from './flatContent';
-import ParallaxBackground from './parallaxBackground';
-import ParallaxContent from './parallaxContent';
+import Footer from './footer';
+import ScrollableContent from './scrollableContent';
+import NavBar from './navbar';
 
-export { Banner, FlatContent, ParallaxBackground, ParallaxContent };
+export { Banner, FlatContent, Footer, ScrollableContent, NavBar };

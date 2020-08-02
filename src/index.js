@@ -3,16 +3,21 @@ import ReactDOM from 'react-dom';
 import ReactFullpage from '@fullpage/react-fullpage';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
 	<ReactFullpage
-		licenseKey={'<API-KEY>'}
+		licenseKey="<API-KEY>"
 		scrollingSpeed={700}
-		scrollOverflow={true}
+		scrollOverflow
+		fixedElements="#header"
+		onLeave={(origin, destination, direction) => {
+			console.log('origin', origin);
+			console.log('destination', destination);
+			console.log('direction', direction);
+		}}
 		render={() => {
-			return (
-				<App />
-			);
+			return <App />;
 		}}
 	/>,
 	document.getElementById('root'),

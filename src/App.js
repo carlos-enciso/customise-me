@@ -1,34 +1,39 @@
 import React from 'react';
 import styled from 'styled-components';
 import GlobalBodyStyle from './styles/globalStyles';
-import { Banner, FlatContent, ParallaxBackground, ParallaxContent } from './components';
-
-const backgroundLogo = require('./assets/background1.jpg');
-
-const wrapper = React.createRef();
-const bannerContent = React.createRef();
-const flatContent = React.createRef();
-const parallaxContent = React.createRef();
+import { Banner, FlatContent, Footer, ScrollableContent, NavBar } from './components';
 
 const Wrapper = styled.div`
 	height: 100vh;
 	width: 100vw;
 `;
 
+const Separator = styled.div`
+	top: 0px;
+	height: 80px;
+	width: 100vw;
+	background: linear-gradient(134deg, #005bea, #00c6fb);
+`;
+
 function App() {
 	return (
 		<div>
 			<GlobalBodyStyle />
-			<Wrapper ref={wrapper}>
-				<div className="section">
-					<Banner ref={bannerContent} />
+			<Wrapper>
+				<div id="header" style={{ position: 'fixed', top: 0, left: 0 }}>
+					<NavBar />
 				</div>
 				<div className="section">
-					<FlatContent ref={flatContent} height="100" />
+					<Banner />
 				</div>
-				<div ref={parallaxContent} className="section">
-					<ParallaxContent contentHeight="100" backgroundLogo={backgroundLogo} />
-					<ParallaxBackground contentHeight="100" />
+				<div className="section">
+					<Separator />
+					<FlatContent />
+				</div>
+				<div className="section">
+					<Separator />
+					<ScrollableContent />
+					<Footer />
 				</div>
 			</Wrapper>
 		</div>
