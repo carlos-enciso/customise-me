@@ -5,6 +5,10 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+const DOWN_DIRECTION = 'down';
+
+let showNavigation = false;
+
 ReactDOM.render(
 	<ReactFullpage
 		licenseKey="<API-KEY>"
@@ -12,12 +16,14 @@ ReactDOM.render(
 		scrollOverflow
 		fixedElements="#header"
 		onLeave={(origin, destination, direction) => {
-			console.log('origin', origin);
-			console.log('destination', destination);
-			console.log('direction', direction);
+			if (direction === DOWN_DIRECTION) {
+				showNavigation = destination.index >= 1;
+			} else {
+				showNavigation = destination.index !== 0;
+			}
 		}}
 		render={() => {
-			return <App />;
+			return <App expandedNav={showNavigation} />;
 		}}
 	/>,
 	document.getElementById('root'),

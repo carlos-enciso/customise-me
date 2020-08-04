@@ -3,19 +3,33 @@ import styled from 'styled-components';
 
 const slideBackground = require('../assets/slide1.png');
 
-const Container = styled.div`
-	width: 100%;
+const Wrapper = styled.div`
 	height: 100vh;
+	width: 100vw;
+	-ms-overflow-style: none;
+	background: rgb(0,199,172);
+	background: linear-gradient(135deg, rgba(0,199,172,1) 50%, rgba(0,188,171,1) 100%);
+	max-height: calc(100vh - 80px);	
+	@media only screen and (min-width: 768px) {
+	}
+`;
+const Container = styled.div`
+	width: auto;
+	height: 100%;
 	display: flex;
-	align-content: center;
+	flex-direction: column;
 	justify-content: center;
-	background-color: #00c6ac;
+	align-content: center;
+	@media only screen and (min-width: 768px) {
+		max-height: calc(100vh - 80px);
+	}
 `;
 const Slide = styled.img`
-	width: 100vw;
-	height: auto;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
 	@media only screen and (min-width: 768px) {
-		width: 75vw;
+		object-fit: cover;
 	}
 `;
 
@@ -30,8 +44,8 @@ const Button = styled.button`
 	top: 70vh;
 	left: 60vw;
 	@media only screen and (min-width: 768px) {
-		top: 62vh;
-		left: 62vw;
+		top: 50vh;
+		left: 66vw;
 	}
 `;
 
@@ -51,12 +65,14 @@ const LabelContent = styled.label`
 
 const FlatContent = React.forwardRef(() => {
 	return (
-		<Container>
-			<Slide src={slideBackground} />
-			<Button>
-				<LabelContent>Customize</LabelContent>
-			</Button>
-		</Container>
+		<Wrapper>
+			<Container>
+				<Slide src={slideBackground} />
+				<Button>
+					<LabelContent>Customize</LabelContent>
+				</Button>
+			</Container>
+		</Wrapper>
 	);
 });
 
