@@ -15,12 +15,19 @@ const IngredientsComponent = () => {
 			{/* TODO: Obtener la imagen por separado y el fondo, asi es mas facil separalo */}
 			<div className={classes.textContainer}>
 				<Typography color="primary" className={classes.message}>
-					One of the main goals of <b>CustomiseMe</b> is to help the environment in the same way as our customers, that is why we strive to use only organic ingredients
-					that have been cared for responsibly. Our main ingredients are{" "}
-					<b>coconut oil, cocoa butter, canola oil, olive oil, shea butter, sunflower oil, and a variety of essential oils.</b> Their individual benefits you can review
-					while customising your own soap. Although our main formulas use these oils as a base, we believe that everyone has special needs and likes for its products.
-					That is why we enjoy working with different ingredients every day. If you have any preference for other natural products, reach out to us and let us help you by
-					offering the best product specially made for you.
+					<p>
+						One of the main goals of <b>CustomiseMe</b> is to help the environment in the same way as our customers, that is why we strive to use only organic
+						ingredients that have been cared for responsibly.
+					</p>
+					<p>
+						Our main ingredients are <b>coconut oil, cocoa butter, canola oil, olive oil, shea butter, sunflower oil, and a variety of essential oils.</b> Their
+						individual benefits you can review while customising your own soap.
+					</p>
+					<p>
+						Although our main formulas use these oils as a base, we believe that everyone has special needs and likes for its products. That is why we enjoy working
+						with different ingredients every day. If you have any preference for other natural products, reach out to us and let us help you by offering the best
+						product specially made for you.
+					</p>
 				</Typography>
 			</div>
 		</div>

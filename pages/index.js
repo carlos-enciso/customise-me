@@ -26,7 +26,7 @@ const Home = (props) => {
 			<div className={cslx(classes.container, classes.landing)}>
 				<Landing />
 			</div>
-			<div className={cslx(classes.container, classes.promo)} id="promo-anchor">
+			<div className={cslx(classes.containerLarge, classes.promo)} id="promo-anchor">
 				<More />
 			</div>
 			{/*<div className={cslx(classes.container, classes.video)}>
@@ -67,7 +67,7 @@ const handleClickIngredients = (event) => {
 	const anchor = (event.target.ownerDocument || document).querySelector("#ingredients-anchor");
 
 	if (anchor) {
-		anchor.scrollIntoView({ behavior: "smooth", block: "center" });
+		anchor.scrollIntoView({ behavior: "smooth", block: "start" });
 	}
 };
 
@@ -107,13 +107,23 @@ const useStyles = makeStyles((theme) => ({
 		display: "flex",
 		flexDirection: "column",
 	},
+	containerLarge: {
+		minHeight: "100vh",
+		display: "flex",
+		flexDirection: "column",
+	},
 	landing: {
 		backgroundImage: `url(${images.fondoLanding})`,
+		backgroundRepeat: "no-repeat",
+		backgroundPosition: "center",
 		backgroundSize: "cover",
+		backgroundAttachment: "fixed",
 	},
 	promo: {
-		backgroundImage: `url(${images.fondoPromo})`,
-		backgroundSize: "100% 100%",
+		backgroundImage: `url(${images.gradientOpacity})`,
+		backgroundRepeat: "no-repeat",
+		backgroundPosition: "center",
+		backgroundSize: "cover",
 	},
 	video: {
 		backgroundColor: Colors.azulFuerte,
@@ -122,7 +132,9 @@ const useStyles = makeStyles((theme) => ({
 		display: "flex",
 		height: "200vh",
 		backgroundImage: `url(${images.fondoIngredientes})`,
-		backgroundSize: "100% 100%",
+		backgroundRepeat: "no-repeat",
+		backgroundPosition: "center",
+		backgroundSize: "cover",
 	},
 	information: {
 		height: "50vh",

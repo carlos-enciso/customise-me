@@ -18,13 +18,15 @@ const LandingComponent = (props) => {
 				</Typography>
 			</div>
 			<div></div>
-			<div className={classes.textContainer}>
-				<Typography variant="h3" color="primary" className={classes.sloganContainer}>
-					Create your own soap
-				</Typography>
-				{/*<Button variant="contained" className={classes.roundedButton}>
-					Here
-	</Button>*/}
+			<div className={classes.textWrapper}>
+				<div className={classes.textContainer}>
+					<Typography variant="h3" color="primary" className={classes.sloganContainer}>
+						Create your own soap
+					</Typography>
+					{/*<Button variant="contained" className={classes.roundedButton}>
+						Here
+					</Button>*/}
+				</div>
 			</div>
 		</TripleColumnComponent>
 	);
@@ -41,6 +43,10 @@ const useStyles = makeStyles({
 	logo: {
 		height: "500px",
 		width: "500px",
+	},
+	textWrapper: {
+		marginTop: "auto",
+		marginBottom: "auto",
 	},
 	textContainer: {
 		display: "flex",

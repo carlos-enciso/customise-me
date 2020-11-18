@@ -15,7 +15,7 @@ const NavbarComponent = (props) => {
 		<AppBar className={classes.navbar}>
 			<div className={classes.logoContainer}>
 				<IconButton className={classes.logoCustomiseme} onClick={navToTop}>
-					<img alt="logo" src={images.logoMenu} />
+					<img alt="logo" src={images.logoMenu} className={classes.iconCustomiseme} />
 				</IconButton>
 			</div>
 			<div className={classes.linksContainer}>
@@ -61,20 +61,27 @@ const useStyles = makeStyles({
 		display: "flex",
 		flexDirection: "row",
 		alignItems: "center",
-		height: "162px",
+		height: "70px",
 		backgroundColor: Colors.menta,
 	},
 	logoContainer: {
-		width: "340px",
+		display: "flex",
+		flexDirection: "row",
+		alignItems: "center",
+		width: "170px",
 		height: "100%",
 		backgroundColor: Colors.azulFuerte,
 		cursor: "pointer",
 	},
 	logoCustomiseme: {
-		height: "94px",
-		width: "94px",
-		marginTop: "30px",
-		marginLeft: "120px",
+		height: "45px",
+		width: "45px",
+		marginLeft: "auto",
+		marginRight: "auto",
+	},
+	iconCustomiseme: {
+		height: "45px",
+		width: "45px",
 	},
 	socialLinks: {
 		display: "flex",

@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles, Typography } from "@material-ui/core/";
+import { Colors } from "../assets/theme";
 
 const AboutUsComponent = () => {
 	const classes = useStyles();
@@ -11,15 +12,27 @@ const AboutUsComponent = () => {
 				</Typography>
 			</div>
 			<div className={classes.textContainer}>
-				<Typography color="secondary" className={classes.message}>
-					We are a group of friends who are very passionate about sustainability and ecology. And we believe that we can contribute to these two objectives by creating
-					personal hygiene products that are completely organic and fully customizable.
-				</Typography>
-				<Typography color="secondary" className={classes.message}>
-					Our backgrounds are diverse - spreading from agriculture to aromatherapy, via biology and business economics, to chemistry and entrepreneurship, including
-					interculturality, marketing and research. Yet, we believe that the unique combination of our fields provides the perfect ground for creating the best possible
-					products for you.
-				</Typography>
+				<p>
+					<Typography color="secondary" className={classes.message}>
+						We are a group of friends who are very passionate about sustainability and ecology. And we believe that we can contribute to these two objectives by
+						creating personal hygiene products that are completely organic and fully customizable.
+					</Typography>
+				</p>
+				<p>
+					<Typography color="secondary" className={classes.message}>
+						Our backgrounds are diverse - spreading from agriculture to aromatherapy, via biology and business economics, to chemistry and entrepreneurship, including
+						interculturality, marketing and research. Yet, we believe that the unique combination of our fields provides the perfect ground for creating the best
+						possible products for you.
+					</Typography>
+				</p>
+				<p>
+					<Typography color="secondary" className={classes.message}>
+						If you are interested, or you want to learn more please contact us on{" "}
+						<a href="mailto:iwouldlikesoap@gmail.com" className={classes.mailtoLink}>
+							iwouldlikesoap@gmail.com
+						</a>
+					</Typography>
+				</p>
 			</div>
 			<div className={classes.footerContainer}>
 				<Typography variant="caption" color="secondary">
@@ -61,10 +74,14 @@ const useStyles = makeStyles({
 	message: {
 		fontSize: "2rem",
 		textAlign: "justify",
+		marginTop: "1rem",
 	},
 	footerContainer: {
 		marginBottom: "auto",
 		textAlign: "center",
+	},
+	mailtoLink: {
+		color: Colors.menta,
 	},
 });
 
