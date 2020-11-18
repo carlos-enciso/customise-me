@@ -7,6 +7,9 @@ const images = {
 	fondoPromo: require("../assets/images/fondo_2.png"),
 	fondoIngredientes: require("../assets/images/fondo_ingredientes.png"),
 	gradientOpacity: require("../assets/images/gradient_opacity.png"),
+	facebookWhiteIcon: require("../assets/images/white_facebook_icon.png"),
+	instagramWhiteIcon: require("../assets/images/white_instagram_icon.png"),
+	twitterWhiteIcon: require("../assets/images/white_twitter_icon.png"),
 };
 
 export default images;

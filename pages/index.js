@@ -9,18 +9,11 @@ import Video from "../components/video";
 import Ingredients from "../components/ingredients";
 import AboutUs from "../components/about-us";
 import { Colors } from "../assets/theme";
-import Head from "next/head";
 
 const Home = (props) => {
 	const classes = useStyles();
 	return (
 		<>
-			<Head>
-				<link rel="preload" href="/fonts/belta/belta-regular.ttf" as="font" crossOrigin="" />
-				<link rel="preload" href="/fonts/belta/belta-bold.ttf" as="font" crossOrigin="" />
-				<link rel="preload" href="/fonts/roboto_condensed/RobotoCondensed-Regular.ttf" as="font" crossOrigin="" />
-				<link rel="preload" href="/fonts/roboto_condensed/RobotoCondensed-Bold.ttf" as="font" crossOrigin="" />
-			</Head>
 			<Navbar navToTop={handleClickTop} navToPromo={handleClickPromo} navToIngredients={handleClickIngredients} navToAboutUs={handleClickAboutUs} />
 			<Toolbar id="back-to-top-anchor" />
 			<div className={cslx(classes.container, classes.landing)}>
@@ -51,7 +44,7 @@ const handleClickTop = (event) => {
 	const anchor = (event.target.ownerDocument || document).querySelector("#back-to-top-anchor");
 
 	if (anchor) {
-		anchor.scrollIntoView({ behavior: "smooth", block: "center" });
+		anchor.scrollIntoView({ behavior: "smooth", block: "start" });
 	}
 };
 
@@ -59,7 +52,7 @@ const handleClickPromo = (event) => {
 	const anchor = (event.target.ownerDocument || document).querySelector("#promo-anchor");
 
 	if (anchor) {
-		anchor.scrollIntoView({ behavior: "smooth", block: "center" });
+		anchor.scrollIntoView({ behavior: "smooth", block: "start" });
 	}
 };
 
@@ -75,7 +68,7 @@ const handleClickAboutUs = (event) => {
 	const anchor = (event.target.ownerDocument || document).querySelector("#about-us-anchor");
 
 	if (anchor) {
-		anchor.scrollIntoView({ behavior: "smooth", block: "center" });
+		anchor.scrollIntoView({ behavior: "smooth", block: "start" });
 	}
 };
 
@@ -130,14 +123,15 @@ const useStyles = makeStyles((theme) => ({
 	},
 	ingredients: {
 		display: "flex",
-		height: "200vh",
+		minHeight: "100vh",
 		backgroundImage: `url(${images.fondoIngredientes})`,
 		backgroundRepeat: "no-repeat",
 		backgroundPosition: "center",
 		backgroundSize: "cover",
+		backgroundAttachment: "fixed",
 	},
 	information: {
-		height: "50vh",
+		minHeight: "100vh",
 		backgroundColor: Colors.azulFuerte,
 	},
 	root: {

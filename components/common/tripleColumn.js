@@ -1,8 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/";
+import { isMobile } from "react-device-detect";
 
 const TripleColumnComponent = (props) => {
-	const classes = useStyles();
+	const classes = useStyles(isMobile);
 	const { children } = props;
 	return (
 		<div className={classes.wrapper}>

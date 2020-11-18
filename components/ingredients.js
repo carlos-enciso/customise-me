@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles, Typography } from "@material-ui/core/";
+import { isMobile } from "react-device-detect";
 import images from "../assets/images";
 
 const IngredientsComponent = () => {
@@ -61,7 +62,7 @@ const useStyles = makeStyles({
 		textAlign: "center",
 	},
 	message: {
-		fontSize: "2rem",
+		fontSize: isMobile ? "1rem" : "2rem",
 		textAlign: "justify",
 	},
 });

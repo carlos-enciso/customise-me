@@ -1,4 +1,5 @@
 import { createMuiTheme } from "@material-ui/core";
+import { isMobile } from "react-device-detect";
 
 const Colors = {
 	azulFuerte: "#04213E",
@@ -22,13 +23,14 @@ const CustomiseMeTheme = createMuiTheme({
 	typography: {
 		htmlFontSize: 16,
 		fontSize: 16,
-		fontFamily: "Segoe UI, Belta",
+		fontFamily: "Roboto Condensed, Belta",
 		h2: {
+			fontSize: isMobile ? "2rem" : "4.3rem",
 			fontWeight: 300,
 			fontFamily: "Roboto Condensed",
 		},
 		h3: {
-			fontSize: "6rem",
+			fontSize: isMobile ? "3rem" : "6rem",
 			fontWeight: 600,
 			fontFamily: "Belta",
 		},

@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles, Typography, Button } from "@material-ui/core/";
+import { isMobile } from "react-device-detect";
 import TripleColumnComponent from "./common/tripleColumn";
 import images from "../assets/images";
 import { Colors } from "../assets/theme";
@@ -41,8 +42,8 @@ const useStyles = makeStyles({
 		textAlign: "center",
 	},
 	logo: {
-		height: "500px",
-		width: "500px",
+		height: isMobile ? "150px" : "500px",
+		width: isMobile ? "150px" : "500px",
 	},
 	textWrapper: {
 		marginTop: "auto",
@@ -60,7 +61,7 @@ const useStyles = makeStyles({
 		borderRadius: "30px",
 		backgroundColor: Colors.azulFuerte,
 		color: Colors.white,
-		fontSize: "4rem",
+		fontSize: isMobile ? "1.5rem" : "4rem",
 	},
 	sloganContainer: {
 		width: "65%",

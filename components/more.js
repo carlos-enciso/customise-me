@@ -3,6 +3,7 @@ import { makeStyles, Typography, Button } from "@material-ui/core/";
 import TripleColumnComponent from "./common/tripleColumn";
 import images from "../assets/images";
 import { Colors } from "../assets/theme";
+import { isMobile } from "react-device-detect";
 
 const LandingComponent = (props) => {
 	const classes = useStyles();
@@ -53,15 +54,14 @@ const useStyles = makeStyles({
 		marginBottom: "auto",
 		textAlign: "center",
 		padding: "3rem",
-		paddingTop: "15rem",
+		paddingTop: isMobile ? "7rem" : "15rem",
 		paddingBottom: "12rem",
 	},
 	messageTitle: {
-		fontSize: "6rem",
 		color: Colors.white,
 	},
 	message: {
-		fontSize: "2.5rem",
+		fontSize: isMobile ? "1.5rem" : "2.5rem",
 		color: Colors.white,
 	},
 });

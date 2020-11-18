@@ -1,6 +1,8 @@
 import React from "react";
-import { makeStyles, Typography } from "@material-ui/core/";
+import { makeStyles, Typography, IconButton } from "@material-ui/core/";
+import { isMobile } from "react-device-detect";
 import { Colors } from "../assets/theme";
+import images from "../assets/images";
 
 const AboutUsComponent = () => {
 	const classes = useStyles();
@@ -34,15 +36,22 @@ const AboutUsComponent = () => {
 					</Typography>
 				</p>
 			</div>
-			<div className={classes.footerContainer}>
-				<Typography variant="caption" color="secondary">
-					"First and foremost, the center of the deep analysis will possibly result in The Program of Powerful Extent" (Adam Denton in The Book of the Source of Permanent
-					Growth) In particular, the exceptional results of the major outcomes can hardly be compared with the general features and possibilities of the best practice
-					patterns. Naturally, the deep analysis should focus on the systolic approach. We must be ready for specific action result and constructive criticism
-					investigation of the irrelevance of ground. Perhaps we should also point out the fact that the design patterns provides a deep insight into the questionable
-					thesis. Let's consider, that study of full-featured practices should correlate with the preliminary action plan.
-				</Typography>
+			<div className={classes.iconsContainer}>
+				<IconButton href="https://www.facebook.com/customisemedk" target="_blank">
+					<img src={images.facebookWhiteIcon} alt="facebook" className={classes.icon} />
+				</IconButton>
+				<IconButton href="https://www.instagram.com/customisemedk/" target="_blank">
+					<img src={images.instagramWhiteIcon} alt="instagram" className={classes.icon} />
+				</IconButton>
+				{/*<IconButton className={classes.socialLinks}>
+					<img src={images.facebookWhiteIcon} alt="facebook" />
+	</IconButton>*/}
 			</div>
+			{/*<div className={classes.footerContainer}>
+				<Typography variant="caption" color="secondary">
+					Copyright 2020
+				</Typography>
+	</div>*/}
 		</div>
 	);
 };
@@ -72,7 +81,7 @@ const useStyles = makeStyles({
 		textAlign: "center",
 	},
 	message: {
-		fontSize: "2rem",
+		fontSize: isMobile ? "1rem" : "2rem",
 		textAlign: "justify",
 		marginTop: "1rem",
 	},
@@ -82,6 +91,17 @@ const useStyles = makeStyles({
 	},
 	mailtoLink: {
 		color: Colors.menta,
+	},
+	iconsContainer: {
+		flex: 1,
+		display: "flex",
+		flexDirection: "row",
+		justifyContent: "center",
+		textAlign: "center",
+	},
+	icon: {
+		height: isMobile ? "25px" : "43px",
+		width: isMobile ? "25px" : "43px",
 	},
 });
 

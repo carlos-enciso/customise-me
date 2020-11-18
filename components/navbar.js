@@ -6,6 +6,7 @@ import { Colors } from "../assets/theme";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import TwitterIcon from "@material-ui/icons/Twitter";
+import { isMobile } from "react-device-detect";
 /* import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import PersonIcon from "@material-ui/icons/Person"; */
 const NavbarComponent = (props) => {
@@ -19,27 +20,27 @@ const NavbarComponent = (props) => {
 				</IconButton>
 			</div>
 			<div className={classes.linksContainer}>
-				<Button variant="text" onClick={navToTop}>
+				<Button variant="text" onClick={navToTop} className={classes.buttonText}>
 					Home
 				</Button>
-				<Button variant="text" onClick={navToPromo}>
+				<Button variant="text" onClick={navToPromo} className={classes.buttonText}>
 					What We Are Doing
 				</Button>
-				<Button variant="text" onClick={navToIngredients}>
+				<Button variant="text" onClick={navToIngredients} className={classes.buttonText}>
 					Our Ingredients
 				</Button>
-				<Button variant="text" onClick={navToAboutUs}>
+				<Button variant="text" onClick={navToAboutUs} className={classes.buttonText}>
 					About Us
 				</Button>
 				<div className={classes.socialLinks}>
-					<IconButton className={classes.socialLinks}>
-						<InstagramIcon />
+					<IconButton className={classes.socialLinks} href="https://www.instagram.com/customisemedk/" target="_blank">
+						<InstagramIcon className={classes.icon} />
 					</IconButton>
-					<IconButton className={classes.socialLinks}>
+					{/*<IconButton className={classes.socialLinks}>
 						<TwitterIcon />
-					</IconButton>
-					<IconButton className={classes.socialLinks}>
-						<FacebookIcon />
+	</IconButton>*/}
+					<IconButton className={classes.socialLinks} href="https://www.facebook.com/customisemedk" target="_blank">
+						<FacebookIcon className={classes.icon} />
 					</IconButton>
 				</div>
 				{/*<Button variant="contained" className={classes.roundedButton}>
@@ -68,20 +69,20 @@ const useStyles = makeStyles({
 		display: "flex",
 		flexDirection: "row",
 		alignItems: "center",
-		width: "170px",
+		width: isMobile ? "100px" : "160px",
 		height: "100%",
 		backgroundColor: Colors.azulFuerte,
 		cursor: "pointer",
 	},
 	logoCustomiseme: {
-		height: "45px",
-		width: "45px",
+		height: isMobile ? "35px" : "55px",
+		width: isMobile ? "35px" : "55px",
 		marginLeft: "auto",
 		marginRight: "auto",
 	},
 	iconCustomiseme: {
-		height: "45px",
-		width: "45px",
+		height: isMobile ? "35px" : "55px",
+		width: isMobile ? "35px" : "55px",
 	},
 	socialLinks: {
 		display: "flex",
@@ -102,6 +103,13 @@ const useStyles = makeStyles({
 		borderRadius: "30px",
 		backgroundColor: Colors.azulFuerte,
 		color: Colors.white,
+	},
+	buttonText: {
+		fontSize: isMobile ? "0.6rem" : "1.5rem",
+	},
+	icon: {
+		height: isMobile ? "1rem" : "43px",
+		width: isMobile ? "1rem" : "43px",
 	},
 });
 
