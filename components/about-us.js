@@ -30,8 +30,8 @@ const AboutUsComponent = () => {
 				<p>
 					<Typography color="secondary" className={classes.message}>
 						IF YOU ARE INTERESTED, OR YOU WANT TO LEARN MORE PLEASE CONTACT US ON{" "}
-						<a href="mailto:iwouldlikesoap@gmail.com" className={classes.mailtoLink}>
-							IWOULDLIKESOAP@GMAIL.COM
+						<a href="mailto:info@customiseme.dk" className={classes.mailtoLink}>
+							INFO@CUSTOMISEME.DK
 						</a>
 					</Typography>
 				</p>
