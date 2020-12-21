@@ -41,37 +41,35 @@ const Home = (props) => {
 	);
 };
 
-const handleClickTop = (event) => {
-	const anchor = (event.target.ownerDocument || document).querySelector("#back-to-top-anchor");
-
-	if (anchor) {
-		anchor.scrollIntoView({ behavior: "smooth", block: "start" });
-	}
+const handleClickTop = () => {
+	handleScroll('back-to-top-anchor');
 };
 
-const handleClickPromo = (event) => {
-	const anchor = (event.target.ownerDocument || document).querySelector("#promo-anchor");
-
-	if (anchor) {
-		anchor.scrollIntoView({ behavior: "smooth", block: "start" });
-	}
+const handleClickPromo = () => {
+	handleScroll('promo-anchor');
 };
 
-const handleClickIngredients = (event) => {
-	const anchor = (event.target.ownerDocument || document).querySelector("#ingredients-anchor");
-
-	if (anchor) {
-		anchor.scrollIntoView({ behavior: "smooth", block: "start" });
-	}
+const handleClickIngredients = () => {
+	handleScroll('ingredients-anchor');
 };
 
-const handleClickAboutUs = (event) => {
-	const anchor = (event.target.ownerDocument || document).querySelector("#about-us-anchor");
-
-	if (anchor) {
-		anchor.scrollIntoView({ behavior: "smooth", block: "start" });
-	}
+const handleClickAboutUs = () => {
+	handleScroll('about-us-anchor');
 };
+
+const handleScroll = (elementId) => {
+	const element = document.getElementById(elementId);
+	const offset = 45;
+	const bodyRect = document.body.getBoundingClientRect().top;
+	const elementRect = element.getBoundingClientRect().top;
+	const elementPosition = elementRect - bodyRect;
+	const offsetPosition = elementPosition - offset;
+
+	window.scrollTo({
+		top: offsetPosition,
+		behavior: 'smooth'
+	});
+}
 
 const ScrollTop = (props) => {
 	const { children, window } = props;

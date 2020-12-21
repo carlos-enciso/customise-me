@@ -43,7 +43,7 @@ const useStyles = makeStyles({
 		textAlign: "center",
 	},
 	textWrapper: {
-		marginTop: isMobile ? "2rem" : "5rem",
+		marginTop: isMobile ? "2.5rem" : "5rem",
 		marginBottom: isMobile ? "2rem" : "5rem",
 		textAlign: "center",
 		padding: "0 0.5rem",
