@@ -49,14 +49,13 @@ const useStyles = makeStyles({
 		padding: "0 0.5rem",
 	},
 	messageTitle: {
-		fontSize: isMobile ? "1.5rem" : "3rem",
 		color: Colors.azulFuerte,
-		paddingTop: "2.5rem",
+		paddingTop: isMobile ? "0" : "2.5rem",
 	},
 	message: {
-		fontSize: isMobile ? "0.5rem" : "1.5rem",
+		fontSize: isMobile ? "1rem" : "2rem",
 		color: Colors.azulFuerte,
-		padding: "0.5rem 3rem",
+		padding: isMobile ? "0.1rem 0.3rem" : "0.5rem 3rem",
 		textAlign: "justify",
 	},
 });

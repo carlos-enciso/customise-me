@@ -102,7 +102,7 @@ const useStyles = makeStyles((theme) => ({
 		flexDirection: "column",
 	},
 	containerLarge: {
-		height: isMobile ? "45vh" : "100vh",
+		height: isMobile ? "55vh" : "100vh",
 		width: "100vw",
 		display: "flex",
 		flexDirection: "column",

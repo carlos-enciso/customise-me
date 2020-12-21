@@ -85,7 +85,7 @@ const useStyles = makeStyles({
 		display: "flex",
 		flexDirection: "column",
 		justifyContent: "center",
-		marginTop: "8rem",
+		marginTop: isMobile ? "2rem" : "4rem",
 		marginLeft: "5rem",
 		marginRight: "5rem",
 		textAlign: "center",
