@@ -8,61 +8,56 @@ import { isMobile } from "react-device-detect";
 const LandingComponent = (props) => {
 	const classes = useStyles();
 	return (
-		<div className={classes.promoBackground}>
-			<div className={classes.logoContainer}>
-				<img src={images.logoSlogan} className={classes.logo} />
-			</div>
+		<>
 			<div className={classes.textWrapper}>
 				<Typography variant="h3" className={classes.messageTitle}>
-					What we are doing
+					WHAT WE ARE DOING
 				</Typography>
 				<Typography className={classes.message}>
-					At the moment we are focusing on our workshops we try to teach people how to make their own handcrafted soap while teaching the benefits of using natural and
-					ecological ingredients in their personal hygiene products
+					AT THE MOMENT, WE FOCUS ON OUR WORKSHOPS WHERE WE GUIDE PEOPLE ON HOW TO MAKE THEIR OWN HANDCRAFTED SOAP WHILE TEACHING THE BENEFITS OF USING NATURAL
+					AND ECOLOGICAL INGREDIENTS IN THEIR PERSONAL HYGIENICAL PRODUCTS.
 				</Typography>
 			</div>
-		</div>
+			<div className={classes.promoBackground}>
+			</div>
+		</>
 	);
 };
 
 const useStyles = makeStyles({
 	promoBackground: {
-		display: "flex",
-		flexDirection: "column",
-		flex: 1,
-		backgroundImage: `url(${images.fondoPromo})`,
-		backgroundRepeat: "no-repeat",
+		paddingTop: "15rem",
+		backgroundImage: `url(${images.artBoard})`,
+		backgroundRepeat: isMobile ? "repeat" : "no-repeat",
 		backgroundPosition: "center",
-		backgroundSize: "cover",
-		opacity: 0.6,
+		backgroundSize: isMobile ? "contain" : "cover",
 		backgroundAttachment: "fixed",
+		height: isMobile ? "65vh" : "100vh",
 	},
 	logoContainer: {
-		display: "flex",
 		flex: 1,
 		flexDirection: "column",
 		justifyContent: "space-between",
-		marginTop: "8rem",
 		marginLeft: "auto",
 		marginRight: "auto",
 		textAlign: "center",
 	},
-	logo: {
-		marginTop: "5rem",
-	},
 	textWrapper: {
-		marginBottom: "auto",
+		marginTop: "5rem",
+		marginBottom: "5rem",
 		textAlign: "center",
-		padding: "3rem",
-		paddingTop: isMobile ? "7rem" : "15rem",
-		paddingBottom: "12rem",
+		padding: "0 0.5rem",
 	},
 	messageTitle: {
-		color: Colors.white,
+		fontSize: isMobile ? "1.5rem" : "3rem",
+		color: Colors.azulFuerte,
+		paddingTop: "2.5rem",
 	},
 	message: {
-		fontSize: isMobile ? "1.5rem" : "2.5rem",
-		color: Colors.white,
+		fontSize: isMobile ? "0.5rem" : "1.5rem",
+		color: Colors.azulFuerte,
+		padding: "0.5rem 3rem",
+		textAlign: "justify",
 	},
 });
 

@@ -10,42 +10,49 @@ const AboutUsComponent = () => {
 		<div className={classes.container}>
 			<div className={classes.titleContainer}>
 				<Typography variant="h3" color="secondary" className={classes.title}>
-					WHO WE ARE
+					ABOUT US
 				</Typography>
 			</div>
 			<div className={classes.textContainer}>
 				<p>
 					<Typography color="secondary" className={classes.message}>
-						We are a group of friends who are very passionate about sustainability and ecology. And we believe that we can contribute to these two objectives by
-						creating personal hygiene products that are completely organic and fully customizable.
+						WE ARE A GROUP OF FRIENDS WHO ARE VERY PASSIONATE ABOUT SUSTAINABILITY AND ECOLOGY. AND WE BELIEVE THAT WE CAN CONTRIBUTE TO THESE TWO OBJECTIVES BY
+						CREATING PERSONAL HYGIENE PRODUCTS THAT ARE COMPLETELY ORGANIC AND FULLY CUSTOMIZABLE.
 					</Typography>
 				</p>
 				<p>
 					<Typography color="secondary" className={classes.message}>
-						Our backgrounds are diverse - spreading from agriculture to aromatherapy, via biology and business economics, to chemistry and entrepreneurship, including
-						interculturality, marketing and research. Yet, we believe that the unique combination of our fields provides the perfect ground for creating the best
-						possible products for you.
+						OUR BACKGROUNDS ARE DIVERSE - SPREADING FROM AGRICULTURE TO AROMATHERAPY, VIA BIOLOGY AND BUSINESS ECONOMICS, TO CHEMISTRY AND ENTREPRENEURSHIP, INCLUDING
+						INTERCULTURALITY, MARKETING AND RESEARCH. YET, WE BELIEVE THAT THE UNIQUE COMBINATION OF OUR FIELDS PROVIDES THE PERFECT GROUND FOR CREATING THE BEST
+						POSSIBLE PRODUCTS FOR YOU.
 					</Typography>
 				</p>
 				<p>
 					<Typography color="secondary" className={classes.message}>
-						If you are interested, or you want to learn more please contact us on{" "}
+						IF YOU ARE INTERESTED, OR YOU WANT TO LEARN MORE PLEASE CONTACT US ON{" "}
 						<a href="mailto:iwouldlikesoap@gmail.com" className={classes.mailtoLink}>
-							iwouldlikesoap@gmail.com
+							IWOULDLIKESOAP@GMAIL.COM
 						</a>
 					</Typography>
 				</p>
 			</div>
+
+			<div className={classes.separator} />
 			<div className={classes.iconsContainer}>
-				<IconButton href="https://www.facebook.com/customisemedk" target="_blank">
-					<img src={images.facebookWhiteIcon} alt="facebook" className={classes.icon} />
-				</IconButton>
-				<IconButton href="https://www.instagram.com/customisemedk/" target="_blank">
-					<img src={images.instagramWhiteIcon} alt="instagram" className={classes.icon} />
-				</IconButton>
-				{/*<IconButton className={classes.socialLinks}>
+				<div className={classes.titleIconsContainer}>
+					<Typography variant="h3" color="secondary" className={classes.titleFollowUs}>
+						FOLLOW US
+					</Typography>
+					<IconButton href="https://www.facebook.com/customisemedk" target="_blank">
+						<img src={images.facebookMentaIcon} alt="facebook" className={classes.icon} />
+					</IconButton>
+					<IconButton href="https://www.instagram.com/customisemedk/" target="_blank">
+						<img src={images.instagramMentaIcon} alt="instagram" className={classes.icon} />
+					</IconButton>
+					{/*<IconButton className={classes.socialLinks}>
 					<img src={images.facebookWhiteIcon} alt="facebook" />
 	</IconButton>*/}
+				</div>
 			</div>
 			{/*<div className={classes.footerContainer}>
 				<Typography variant="caption" color="secondary">
@@ -63,13 +70,16 @@ const useStyles = makeStyles({
 		flexDirection: "column",
 		justifyContent: "space-between",
 		alignContent: "center",
+		color: Colors.menta,
 	},
 	titleContainer: {
 		marginTop: "5rem",
 		marginLeft: "auto",
 		marginRight: "auto",
 	},
-	title: {},
+	title: {
+		color: Colors.menta,
+	},
 	textContainer: {
 		flex: 1,
 		display: "flex",
@@ -82,15 +92,16 @@ const useStyles = makeStyles({
 	},
 	message: {
 		fontSize: isMobile ? "1rem" : "2rem",
-		textAlign: "justify",
+		textAlign: "center",
 		marginTop: "1rem",
+		color: Colors.menta,
 	},
 	footerContainer: {
 		marginBottom: "auto",
 		textAlign: "center",
 	},
 	mailtoLink: {
-		color: Colors.menta,
+		fontStyle: "italic",
 	},
 	iconsContainer: {
 		flex: 1,
@@ -103,6 +114,24 @@ const useStyles = makeStyles({
 		height: isMobile ? "25px" : "43px",
 		width: isMobile ? "25px" : "43px",
 	},
+	separator: {
+		height: "1px",
+		backgroundColor: Colors.menta,
+		width: "10rem",
+		marginTop: "6rem",
+		marginLeft: "auto",
+		marginRight: "auto",
+		marginBottom: "1rem",
+	},
+	titleIconsContainer: {
+		marginLeft: "auto",
+		marginRight: "auto",
+		color: Colors.menta,
+	},
+	titleFollowUs: {
+		fontSize: "1.5rem",
+		color: Colors.menta,
+	}
 });
 
 export default AboutUsComponent;

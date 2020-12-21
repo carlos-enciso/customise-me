@@ -1,6 +1,7 @@
 import cslx from "clsx";
 import { makeStyles, useScrollTrigger, Fab, Toolbar, Zoom } from "@material-ui/core/";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
+import { isMobile } from "react-device-detect";
 import images from "../assets/images";
 import Navbar from "../components/navbar";
 import Landing from "../components/landing";
@@ -14,8 +15,8 @@ const Home = (props) => {
 	const classes = useStyles();
 	return (
 		<>
-			<Navbar navToTop={handleClickTop} navToPromo={handleClickPromo} navToIngredients={handleClickIngredients} navToAboutUs={handleClickAboutUs} />
-			<Toolbar id="back-to-top-anchor" />
+			<Navbar navToTop={handleClickTop} navToPromo={handleClickPromo} navToIngredients={handleClickIngredients} navToAboutUs={handleClickAboutUs} className={classes.navBar} />
+			<Toolbar id="back-to-top-anchor" className={classes.toolbar} />
 			<div className={cslx(classes.container, classes.landing)}>
 				<Landing />
 			</div>
@@ -95,36 +96,40 @@ const ScrollTop = (props) => {
 
 const useStyles = makeStyles((theme) => ({
 	container: {
-		minHeight: "100vh",
-		padding: "0 0.5rem",
+		minHeight: isMobile ? "65vh" : "100vh",
+		width: "100vw",
 		display: "flex",
 		flexDirection: "column",
 	},
 	containerLarge: {
-		minHeight: "100vh",
+		height: isMobile ? "45vh" : "100vh",
+		width: "100vw",
 		display: "flex",
 		flexDirection: "column",
 	},
+	navBar: {
+		width: "100vw",
+	},
 	landing: {
-		backgroundImage: `url(${images.fondoLanding})`,
+		backgroundImage: `url(${images.backgroundTextureCardboard})`,
 		backgroundRepeat: "no-repeat",
 		backgroundPosition: "center",
 		backgroundSize: "cover",
 		backgroundAttachment: "fixed",
 	},
 	promo: {
-		backgroundImage: `url(${images.gradientOpacity})`,
+		backgroundImage: `url(${images.backgroundGreen})`,
 		backgroundRepeat: "no-repeat",
 		backgroundPosition: "center",
 		backgroundSize: "cover",
+		minHeight: isMobile ? "65vh" : '120vh',
 	},
 	video: {
 		backgroundColor: Colors.azulFuerte,
 	},
 	ingredients: {
 		display: "flex",
-		minHeight: "100vh",
-		backgroundImage: `url(${images.fondoIngredientes})`,
+		backgroundImage: `url(${images.backgroundTextureCardboard})`,
 		backgroundRepeat: "no-repeat",
 		backgroundPosition: "center",
 		backgroundSize: "cover",
@@ -139,6 +144,10 @@ const useStyles = makeStyles((theme) => ({
 		bottom: "1rem",
 		right: "1rem",
 	},
+	toolbar: {
+		width: "100vw",
+		padding: 0,
+	}
 }));
 
 export default Home;

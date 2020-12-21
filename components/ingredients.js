@@ -2,34 +2,40 @@ import React from "react";
 import { makeStyles, Typography } from "@material-ui/core/";
 import { isMobile } from "react-device-detect";
 import images from "../assets/images";
+import { Colors } from "../assets/theme";
 
 const IngredientsComponent = () => {
 	const classes = useStyles();
 	return (
 		<div className={classes.container}>
 			<div className={classes.titleContainer}>
-				<Typography variant="h3" color="primary" className={classes.title}>
-					Our Ingredients
+				<Typography variant="h3" color="primary">
+					OUR INGREDIENTS
 				</Typography>
 			</div>
-			<div className={classes.emptyContainer}>&nbsp;</div>
-			{/* TODO: Obtener la imagen por separado y el fondo, asi es mas facil separalo */}
 			<div className={classes.textContainer}>
 				<Typography color="primary" className={classes.message}>
 					<p>
-						One of the main goals of <b>CustomiseMe</b> is to help the environment in the same way as our customers, that is why we strive to use only organic
-						ingredients that have been cared for responsibly.
+						ONE OF THE MAIN GOALS OF <b>CustomiseMe</b> IS TO HELP THE ENVIRONMENT IN THE SAME WAY AS OUR CUSTOMERS, THAT IS WHY WE STRIVE TO USE ONLY ORGANIC
+						INGREDIENTS THAT HAVE BEEN CARED FOR RESPONSIBLY.
 					</p>
 					<p>
-						Our main ingredients are <b>coconut oil, cocoa butter, canola oil, olive oil, shea butter, sunflower oil, and a variety of essential oils.</b> Their
-						individual benefits you can review while customising your own soap.
+						OUR MAIN INGREDIENTS ARE <b>COCONUT OIL, COCOA BUTTER, CANOLA OIL, OLIVE OIL, SHEA BUTTER, SUNFLOWER OIL, AND A VARIETY OF ESSENTIAL OILS.</b> THEIR
+						INDIVIDUAL BENEFITS YOU CAN REVIEW WHILE CUSTOMISING YOUR OWN SOAP.
 					</p>
 					<p>
-						Although our main formulas use these oils as a base, we believe that everyone has special needs and likes for its products. That is why we enjoy working
-						with different ingredients every day. If you have any preference for other natural products, reach out to us and let us help you by offering the best
-						product specially made for you.
+						ALTHOUGH OUR MAIN FORMULAS USE THESE OILS AS A BASE, WE BELIEVE THAT EVERYONE HAS SPECIAL NEEDS AND LIKES FOR ITS PRODUCTS. THAT IS WHY WE ENJOY WORKING
+						WITH DIFFERENT INGREDIENTS EVERY DAY. IF YOU HAVE ANY PREFERENCE FOR OTHER NATURAL PRODUCTS, REACH OUT TO US AND LET US HELP YOU BY OFFERING THE BEST
+						PRODUCT SPECIALLY MADE FOR YOU.
 					</p>
 				</Typography>
+			</div>
+			<div className={classes.separator} />
+			<div className={classes.sealContainer}>
+				<img src={images.productsOrganicSeal} className={classes.sealBackground} />
+			</div>
+			<div className={classes.ingredientsBackground}>
+				<img src={images.ingredientsImage} className={classes.ingredientsImage} />
 			</div>
 		</div>
 	);
@@ -46,24 +52,44 @@ const useStyles = makeStyles({
 		marginLeft: "auto",
 		marginRight: "auto",
 	},
-	title: {},
-	emptyContainer: {
-		flex: 2,
-		height: "50rem", // TODO: Removerlo con la imagen de fondo
-	},
 	textContainer: {
 		flex: 1,
 		display: "flex",
 		flexDirection: "row",
 		justifyContent: "center",
-		marginTop: "8rem",
+		marginTop: "1rem",
 		marginLeft: "5rem",
 		marginRight: "5rem",
 		textAlign: "center",
 	},
 	message: {
 		fontSize: isMobile ? "1rem" : "2rem",
-		textAlign: "justify",
+		textAlign: "center",
+	},
+	separator: {
+		height: "1px",
+		backgroundColor: Colors.azulFuerte,
+		width: "10rem",
+		marginLeft: "auto",
+		marginRight: "auto",
+		marginBottom: "2rem",
+	},
+	sealContainer: {
+		flex: 1,
+		marginTop: "8rem",
+		textAlign: "center",
+		zIndex: 99,
+	},
+	ingredientsBackground: {
+		height: isMobile ? "60vh" : "100vh",
+		width: "100vw",
+		position: "relative"
+	},
+	ingredientsImage: {
+		height: isMobile ? "50vh" : "100vh",
+		width: "100vw",
+		position: "absolute",
+		bottom: 0,
 	},
 });
 

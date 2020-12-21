@@ -10,6 +10,14 @@ const images = {
 	facebookWhiteIcon: require("../assets/images/white_facebook_icon.png"),
 	instagramWhiteIcon: require("../assets/images/white_instagram_icon.png"),
 	twitterWhiteIcon: require("../assets/images/white_twitter_icon.png"),
+	backgroundTextureCardboard: require("../assets/images/BACKGROUND_1.png"),
+	backgroundGreen: require("../assets/images/BACKGROUND_2.png"),
+	bottleBackground: require("../assets/images/bottle_background.png"),
+	productsOrganicSeal: require("../assets/images/products_organic_seal.png"),
+	artBoard: require("../assets/images/artboard.png"),
+	ingredientsImage: require("../assets/images/ingredients_image.png"),
+	facebookMentaIcon: require("../assets/images/facebook_icon_menta.png"),
+	instagramMentaIcon: require("../assets/images/instagram_icon_menta.png"),
 };
 
 export default images;

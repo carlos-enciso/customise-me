@@ -16,11 +16,8 @@ function MyApp({ Component, pageProps }) {
 	return (
 		<>
 			<Head>
-				<link rel="preload" href="/fonts/belta/belta-regular.ttf" as="font" crossOrigin="" />
-				<link rel="preload" href="/fonts/belta/belta-bold.ttf" as="font" crossOrigin="" />
-				<link rel="preload" href="/fonts/roboto_condensed/RobotoCondensed-Regular.ttf" as="font" crossOrigin="" />
-				<link rel="preload" href="/fonts/roboto_condensed/RobotoCondensed-Bold.ttf" as="font" crossOrigin="" />
-				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+				<title>CustomiseMe</title>
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 			</Head>
 			<MuiThemeProvider theme={CustomiseMeTheme}>
 				<Component {...pageProps} />

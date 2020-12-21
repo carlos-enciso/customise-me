@@ -23,16 +23,16 @@ const CustomiseMeTheme = createMuiTheme({
 	typography: {
 		htmlFontSize: 16,
 		fontSize: 16,
-		fontFamily: "Roboto Condensed, Belta",
+		fontFamily: "Roboto Condensed, Another Wet Shabby",
 		h2: {
 			fontSize: isMobile ? "2rem" : "4.3rem",
 			fontWeight: 300,
 			fontFamily: "Roboto Condensed",
 		},
 		h3: {
-			fontSize: isMobile ? "3rem" : "6rem",
-			fontWeight: 600,
-			fontFamily: "Belta",
+			fontSize: isMobile ? "2rem" : "6rem",
+			fontWeight: 300,
+			fontFamily: "Another Wet Shabby",
 		},
 	},
 });
