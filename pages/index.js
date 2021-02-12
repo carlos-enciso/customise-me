@@ -1,7 +1,9 @@
+import React from "react";
 import cslx from "clsx";
 import { makeStyles, useScrollTrigger, Fab, Toolbar, Zoom } from "@material-ui/core/";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import { isMobile } from "react-device-detect";
+import { initGA, logPageView } from '../utils/analytics'
 import images from "../assets/images";
 import Navbar from "../components/navbar";
 import Landing from "../components/landing";
@@ -12,6 +14,13 @@ import AboutUs from "../components/about-us";
 import { Colors } from "../assets/theme";
 
 const Home = (props) => {
+	React.useEffect(() => {
+		if (!window.GA_INITIALIZED) {
+			initGA();
+			window.GA_INITIALIZED = true;
+		}
+		logPageView();
+	}, []);
 	const classes = useStyles();
 	return (
 		<>

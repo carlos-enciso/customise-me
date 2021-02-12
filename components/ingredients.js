@@ -75,7 +75,6 @@ const useStyles = makeStyles({
 		marginBottom: "2rem",
 	},
 	sealContainer: {
-		flex: 1,
 		marginTop: "8rem",
 		textAlign: "center",
 		zIndex: 99,
